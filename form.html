@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Document</title>
+     <!-- /*este es mi kit de fontawesome jiji */-->
+     <script src="https://kit.fontawesome.com/75e4935252.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <div class="container">
+       
+
+        <h1>¡Suscríbete a mi newsletter y mantente al tanto de todas las novedades!</h1>
+        <div class="espacio">
+            <div class="imagen">
+               <img src="perf4.png" alt="Descripción de la imagen">
+            </div>
+            <div class="texto">
+              <p>Intentaré actualizar constantemente la página, compartir contenido interesante, noticias emocionantes, uso de nuevas tecnologías y recursos valiosos con nuestra comunidad. Y para asegurarme de que nunca te pierdas nada, te invito a suscribirte a mi newsletter.</p>
+              <p>¡Al unirte, recibirás en tu bandeja de entrada las últimas actualizaciones!</p>
+            </div>
+       </div>
+        <div class="inscripcion">
+            <form  action="/suscribirse" method="POST">
+                
+                <div> 
+                    <label for="nombre">Tu nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" required><br>
+                </div>
+                <div>
+                    <label for="email">Dirección de email:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                </div>
+                <div>
+                    <label for="telefono">Numero de telefono</label>
+                    <input type="number" id="number" name="numero" min="0"> <br>
+               </div>
+               <div>
+                    <label for="Ciudades">Selecciones su ciudad:</label>
+                    <input list="Ciudades" nombre="Ciudades">
+                    <datalist id="Ciudades">
+                      <option value="MDP"></option>
+                      <option value="BS.AS"></option>
+                      <option value="Chile"></option>
+                      <option value="Uruguay"></option>
+                    </datalist>
+                </div>
+                <div>
+                  <label for="mensaje">Comentarios:</label><br>
+                    <div class="coment">
+                      <textarea id="mensaje" name="mensaje"></textarea><br>
+                    </div>
+                </div>
+                <button type="submit">¡Suscrirme!</button>
+        
+            </form>
+        </div>
+   
+        <div class="atras">
+            <ul>
+                <li>
+                    <a href="index.html">
+                    
+                        <i class="fa-solid fa-circle-chevron-left"></i>
+                    
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+ 
+</body>
+</html>

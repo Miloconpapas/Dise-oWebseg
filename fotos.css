@@ -1,0 +1,43 @@
+body{
+ 
+background-image: 
+linear-gradient( rgba(0,0,0, 0.0), rgba(0,0,0, 0.0) ),
+url(3.jpg);
+
+}
+.grid-container {
+display:grid; 
+   grid-template-columns: repeat(  /*Se ajusta a la pantalla*/
+    auto-fit,minmax(150px,1fr)
+    
+   );
+   gap:32px;
+  
+  }
+
+
+.grid-container img {
+    max-width: 100%; /* Ajusta el ancho máximo de las imágenes al tamaño del contenedor */
+    height: 100%; /* Mantiene la proporción de aspecto de las imágenes */
+    border-radius: 15px; /*con las puntitas redondias queda mas lindo :)*/
+  }
+
+.texto{
+text-align: center;
+color: aliceblue;
+}
+
+
+ /*BOTON ATRAS*/
+.atras{
+  font-size: 40px;
+  margin-top:-927px;
+  margin-left: 350px;
+}
+.atras i{
+  color: aliceblue;
+}
+ul {
+  list-style: none; /*sino me quedaba el marker y era horrible.*/
+}
+

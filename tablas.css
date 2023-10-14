@@ -1,0 +1,44 @@
+body {
+    background-image: 
+    linear-gradient( rgba(0,0,0, 0.0), rgba(0,0,0, 0.0) ),
+    url(3.jpg);
+    background-size: cover;
+    width: 100%;
+}
+.cuadrado {
+  display: flex;
+  flex-wrap: wrap;
+  color: aliceblue;
+}
+
+.cuadrado table {
+  flex: 1 1 180px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.atras{
+    font-size: 45px;
+  
+  }
+  .atras i{
+    color: aliceblue;
+  }
+  ul {
+    list-style: none; /*sino me quedaba el marker y era horrible.*/
+  }
+
+
+  .texto {
+    color: aliceblue;
+    margin-left: 370px;
+    margin-top: -500px;
+    max-width: 800px; 
+    font-size: 20px;
+   
+  }
+  .texto p {
+      margin-bottom: 10px; /* Espacio entre párrafos */
+  }
+  .texto h2{
+    margin-left: 300px;
+  }

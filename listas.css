@@ -1,0 +1,219 @@
+body {
+    background-image: 
+    linear-gradient( rgba(0,0,0, 0.0), rgba(0,0,0, 0.0) ),
+    url(3.jpg);
+    background-size: cover;
+    width: 100%;
+}
+
+.texto {
+    text-align: center;
+   /* margin-top: -39%;*/
+    color: aliceblue;
+
+   
+  }
+.navbarR{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+.container{ 
+   
+    justify-content: space-around;
+    width: calc(100vw - 150px);
+    display: flex;
+    justify-content: center;
+    position: relative;  
+    /*bottom: 9em; /*Lo puse arriba del todo*/
+    align-items: center;
+
+
+   
+}
+/*aca es para el darkmode*/
+  body.dark{
+    background-image: 
+    linear-gradient( rgba(0,0,0, 0.6), rgba(0,0,0, 0.6) ),
+    url(3.jpg);
+    transition: all;
+ 
+  }
+  
+  /*BORDE NEGRITO*/
+  .radio-btn{
+      width: 90px;
+      height: 30px;
+      padding: 10px;
+      margin-left: 110px; /*erna 50*/
+      margin-top: -50px;
+      background-color: #27173a;
+      border-radius: 50px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    
+  }
+  
+  /* SOL*/
+  .radio-btn .radio-inner{  
+      position: relative;
+      width: 30px;
+      height: 30px;
+      background-color: #ffc207;
+      border-radius: 50%;
+      overflow: hidden; /*Oculto el circulo de la animacion redondo en .radio-btn .radio-inner::before */
+      transition: all 0.9s;
+  }
+
+  .radio-btn .radio-inner::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -70%;
+      width: 100%;
+      height: 100%;
+      background-color: #27173a;
+      border-radius: 50%; /*Lo redondeo*/
+      transform: scale(0);
+      transition: all 0.9s;
+  
+  }
+  
+  .radio-btn .radio-inner.active{
+      transform: translateX(calc(150px - 108px)); /*Con esto hacemos que se mueva cuando lo clickeamos*/
+      
+  }
+  
+  .radio-btn .radio-inner.active::before{
+      left: -14px;/*aca es la lunita :D*/
+      transform: scale(1); /*Aca hacemos que del scale 0 (lo que hicimos en el anterior before) pase a 1 o sea se haga la lunita*/
+  }
+  
+  
+  
+   
+    .link {
+      margin: 20px;
+    }
+  
+    .icon_3d {
+      width: 100px;
+      height: 100px;
+      perspective: 400px;
+    
+      /*transition-property: clip-path; con estas dos lineas se hacen circulos 
+       clip-path: circle(50% at center); */
+  
+    }
+    
+  
+    .cube_3d {
+      width: 100%;
+      height: 100%;
+      margin-left: 90px; 
+      position: relative;
+      transform-style: preserve-3d;
+      transform: translateZ(-20px);
+      transition: all 1s;
+      
+    }
+  
+    .cube_face {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      line-height: 50px;
+      text-align: center;
+     
+    }
+  
+    .front-face {
+    background-color: #fffdf5;
+    transform: rotateY(0deg) translateZ(25px);
+    z-index: 2;
+    }
+  
+    .right-face {
+      color: #ffffff;
+      background-color: #ed008c;
+      
+      transform: rotateY(90deg) translateZ(24px);
+    }
+  
+    .link:nth-of-type(1) .front-face {
+      color: #171515;
+    }
+  
+    .link:nth-of-type(1) .right-face {
+      background-color: #171515;
+      
+    }
+  
+    .link:nth-of-type(2) .front-face {
+      color: #00acee ;
+      
+    }
+  
+    .link:nth-of-type(2) .right-face {
+      background-color: #00acee ;
+    }
+  
+    .link:nth-of-type(3) .front-face {
+      color: #00bb2d;
+    }
+  
+    .link:nth-of-type(3) .right-face {
+      background-color: #00bb2d;
+    }
+  
+    .link:nth-of-type(4) .front-face {
+      color: #ff0080 ;
+    }
+  
+    .link:nth-of-type(4) .right-face {
+     /*Le mande un degrade porque puedo.*/
+      background: linear-gradient(#2ae6ff, #ff0080); 
+    }
+  
+    .link:hover .cube_3d {
+      transform: translateZ(-50px) rotateY(-90deg);
+    }
+    
+    .listas {
+      color: aliceblue;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-gap: 10px;
+    }
+    
+    .titulo {
+     display: block;
+    /*  writing-mode: vertical-rl; /*Lo pone vertical ajajja
+      rotate: 180deg;*/
+    }
+ 
+ 
+    
+    /*BOTON ATRAS*/
+.atras{
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  height: 100%;
+  margin-top:-45px;
+}
+
+.atras i{
+      color:aliceblue;
+      font-size: 45px;
+      text-align: start;
+}
+ul {
+      list-style: none; /*sino me quedaba el marker y era horrible.*/
+ }
+    
+    
+    

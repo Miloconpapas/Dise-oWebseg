@@ -1,0 +1,123 @@
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url(3.jpg);
+}
+
+.espacio{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+form{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    margin-top: 6%;
+    
+
+}
+
+form div div{
+width: 100%;
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+gap: 15px;
+align-items: center;
+text-align: start;
+margin-top: 10px;
+}
+form div div label{
+    width: 50%;
+}
+form button{
+border-radius: 4px;
+padding: 10px;
+width: 40%;
+margin-top: 10px;
+}
+form div input{
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+
+}
+form div textarea{
+    width: 100%;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: aliceblue;
+    align-items: center;
+    
+    
+   
+}
+.container:hover img {
+    transition: all 0.6s;
+    transform: scale(1.20) rotate(-6deg);
+    filter: drop-shadow(0 0 10px rgba(48, 45, 45, 0.774)) 
+            drop-shadow(0 0 0 rgba(212, 69, 69, 0.603)) 
+            drop-shadow(0 0 0 rgba(0, 0, 0, 0.76)); /* Agrega sombra con contorno de la imagen */
+}
+.container img {
+    transition: transform 0.6s ease-out 0.1s; /* Retardo en la transición */
+   
+
+}
+
+.imagen {
+    position: relative;
+    width: 35%;
+}
+
+.imagen img {
+    max-width: 65%;
+   
+    
+}
+
+.texto {
+    
+    width:60%;
+    margin-top: 5%;
+    margin-left: -20%;
+    margin-bottom: 0;
+    max-width: 400px; 
+    text-align: justify;
+}
+
+.texto p {
+    margin-bottom: 10px; /* Espacio entre párrafos */
+}
+
+.ripcion {
+    margin-top: 40px;
+   
+}
+
+
+.coment {
+   
+    height: 50px; 
+}
+
+.atras{
+    font-size: 40px;
+    margin-top:-755px;
+    margin-right: 90%;
+  }
+  .atras i{
+    color: aliceblue;
+  }
+  ul {
+    list-style: none; /*sino me quedaba el marker y era horrible.*/
+  }
+  
