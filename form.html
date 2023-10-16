@@ -23,7 +23,7 @@
             </div>
        </div>
         <div class="inscripcion">
-            <form  action="/suscribirse" method="POST">
+            <form  id="form-inscription"  method="POST">
                 
                 <div> 
                     <label for="nombre">Tu nombre:</label><br>
@@ -31,16 +31,16 @@
                 </div>
                 <div>
                     <label for="email">Dirección de email:</label><br>
-                    <input type="email" id="email" name="email" required><br>
+                    <input type="email" id="email" name="email" required autocomplete="on"><br>
                 </div>
                 <div>
-                    <label for="telefono">Numero de telefono</label>
-                    <input type="number" id="number" name="numero" min="0"> <br>
+                    <label for="numero">Numero de telefono</label>
+                    <input type="number" id="numero" name="numero" min="0"> <br>
                </div>
                <div>
-                    <label for="Ciudades">Selecciones su ciudad:</label>
-                    <input list="Ciudades" nombre="Ciudades">
-                    <datalist id="Ciudades">
+                    <label for="ciudades">Selecciones su ciudad:</label>
+                    <input list="Ciudades"  id="ciudades" name="ciudades">
+                    <datalist name="ciudades" id="ciudades">
                       <option value="MDP"></option>
                       <option value="BS.AS"></option>
                       <option value="Chile"></option>
@@ -53,7 +53,7 @@
                       <textarea id="mensaje" name="mensaje"></textarea><br>
                     </div>
                 </div>
-                <button type="submit">¡Suscrirme!</button>
+                <button type="submit">¡Suscribirme!</button>
         
             </form>
         </div>
@@ -61,6 +61,7 @@
         <div class="atras">
             <ul>
                 <li>
+
                     <a href="index.html">
                     
                         <i class="fa-solid fa-circle-chevron-left"></i>
@@ -72,4 +73,7 @@
     </div>
  
 </body>
+  <!-- Esta biblioteca depende de jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="main.js"></script>
 </html>

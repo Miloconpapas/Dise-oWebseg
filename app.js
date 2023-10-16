@@ -1,45 +1,48 @@
 
 const express = require('express');
 const mysql = require('mysql2');
-const bodyParser = require('body-parser');
+const dotenv = require("dotenv")
+const cors = require("cors")
 
 const app = express();
 
+dotenv.config();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
 // Configuración de la conexión a la base de datos
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'HoyTomeReliveran432',
-    database: 'DiseñoWeb',
+const db = () => mysql.createConnection({
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || 'HoyTomeReliveran432',
+    database: process.env.DB_DATABASE || 'DiseñoWeb',
+    port: process.env.DB_PORT || "3306"
 });
-
-db.connect((err) => {
-  if (err) {
-    console.error('Error al conectar a la base de datos: ' + err.message);
-  } else {
-    console.log('Conexión a la base de datos exitosa');
-  }
-});
-
-// Middleware para procesar datos del formulario
-app.use(bodyParser.urlencoded({ extended: true }));
 
 // Ruta para procesar el formulario
-app.post('/suscribirse', (req, res) => {
-  const { nombre, email, numero, Ciudades, mensaje } = req.body;
+app.post('/suscribirse', async (req, res) => {
+  const { nombre, email, numero, ciudades, mensaje } = req.body;
+  
+  const connection = db();
 
   const sql = 'INSERT INTO suscripciones (nombre, email, numero, ciudad, comentario) VALUES (?, ?, ?, ?, ?)';
-  const values = [nombre, email, numero, Ciudades, mensaje];
+  const values = [nombre, email, numero, ciudades, mensaje];
 
-  db.query(sql, values, (err, result) => {
-    if (err) {
-      console.error('Error al insertar datos en la base de datos: ' + err.message);
-      res.status(500).send('Error al suscribirse.');
-    } else {
-      console.log('Suscripción exitosa');
-      res.send('¡Suscripción exitosa!');
-    }
-  });
+  const response = await new Promise((resolve) => {
+    connection.query(sql, values, (err) => {
+      if(err){
+        connection.end()
+        resolve(err)
+      } else {
+        connection.end();
+        resolve({mensaje: "Consulta creada!"})
+      }
+    })
+  })
+
+  res.send(response)
+
 });
 
 const PORT = process.env.PORT || 3001;

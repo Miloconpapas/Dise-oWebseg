@@ -4,3 +4,24 @@ $(document).ready(function () {
       $("body").toggleClass("dark");
     });
   });
+
+// /Dise-oWebseg/form.html
+if(window.location.pathname === "/form.html" || window.location.pathname === "/Dise-oWebseg/form.html") {
+  addEventListener("load", () => {
+    const form = document.getElementById('form-inscription');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form)
+      const data = Object.fromEntries(formData)
+      fetch("http://127.0.0.1:3001/suscribirse", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json"}
+      }).then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        form.reset();
+      })
+    })
+  })
+}
