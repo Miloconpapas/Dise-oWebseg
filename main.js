@@ -13,7 +13,7 @@ if(window.location.pathname === "/form.html" || window.location.pathname === "/D
       e.preventDefault();
       const formData = new FormData(form)
       const data = Object.fromEntries(formData)
-      fetch("http://127.0.0.1:3001/suscribirse", {
+      fetch("https://disenowebfinal.onrender.com/suscribirse", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json"}
